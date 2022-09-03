@@ -37,7 +37,7 @@ message VOR {
   /*
   The URL for the associated Version of Record
   */
-  required string url = 1;
+  string url = 1;
 
   /*
   The type, such as "application/pdf", this field is sometimes
@@ -59,7 +59,7 @@ message Entitlement {
   Indicates if the caller has provided an identifier that
   entitles the user to access the document
   */
-  required bool entitled = 2;
+  bool entitled = 2;
 
   /*
   The URL to the document
@@ -159,12 +159,12 @@ message EntitlementRequest {
     /*
     The type to assign to the identifier value, such as "IPV4"
     */
-    required IdentifierType type = 1;
+    IdentifierType type = 1;
 
     /*
     The value associated with the provided type, such as "192.168.0.1"
     */
-    required string value = 2;
+    string value = 2;
   }
 
   /*
