@@ -204,6 +204,32 @@ message EntitlementRequest {
 }
 
 /*
+Message containing performance metrics
+*/
+message PerformanceMetrics {
+  /*
+  Total time taken to process the request
+  */
+  double totalRequestProcessingTime = 1;
+  /*
+  Time taken to resolve DOIs
+  */
+  optional double doisResolveLatency = 2;
+  /*
+  Time taken to resolve all identifiers
+  */
+  optional double institutionIDsResolveLatency = 3;
+  /*
+  Time taken to resolve caller config
+  */
+  optional double callerConfigResolveLatency = 4;
+  /*
+  Time taken to resolve entitlements
+  */
+  optional double entitlementsResolveLatency = 5;
+}
+
+/*
 Message representing the entitlement response.
 
 @example Response check for two DOIs
@@ -235,6 +261,10 @@ message EntitlementResponse {
   that our system could not find.
   */
   repeated string unprocessed = 2;
+  /*
+  Performance metrics of the entitlement request
+  */
+  optional PerformanceMetrics performanceMetrics = 3;
 }
 
 service EntitlementsService {
