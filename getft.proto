@@ -8,9 +8,9 @@ An enum for the access type for a document DOI
 */
 enum AccessType {
   /*
-  Indicates this document is paid-for
+  Indicates that the access type is not specified
   */
-  PAID = 0;
+  UNSPECIFIED = 0;
 
   /*
   This document is currently free
@@ -28,6 +28,11 @@ enum AccessType {
   This document is permanently free
   */
   PERMANENTLY_FREE = 3;
+
+  /*
+  This document is paid-for
+  */
+  PAID = 4;
 }
 
 /*
